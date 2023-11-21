@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import dividerIcon from "../../../assets/desktop/icon-oval.svg";
+import dividerIcon from "../../../public/assets/desktop/icon-oval.svg";
 
 interface JobPostProps {
   logo: any;
@@ -19,14 +19,14 @@ export function JobPost(props: JobPostProps) {
   console.log(bg);
 
   return (
-    <div className="px-8 pb-9 pt-[3.06rem] bg-white rounded-md w-[21.827rem] h-[14.25rem] relative">
+    <div className="px-8 pb-9 pt-[3.06rem] bg-white rounded-md lg:w-[21.827rem] lg:h-[14.25rem] relative">
       <div
         className={`company-logo | z-50 rounded-xl h-[3.125rem] w-[3.125rem] absolute -top-7 flex justify-center items-center`}
         style={{ backgroundColor: bg }}
       >
         <Image
-          src={require(logo)}
-          // src={require("../../../assets/logos/scoot.svg")}
+          // src={require(logo)}
+          src={require("../../../public/assets/logos/scoot.svg")}
           alt={`${company} logo`}
           width="50"
           height="50"

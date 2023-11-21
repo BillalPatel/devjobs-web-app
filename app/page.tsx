@@ -26,10 +26,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 relative">
-      <SearchBox />
+    <main className="flex min-h-screen flex-col items-center justify-between lg:p-24 relative">
+      {/* <SearchBox /> */}
 
-      <div className="grid grid-cols-3 gap-x-[1.87rem] gap-y-[4.06rem] mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[1.87rem] gap-y-[4.06rem] lg:mt-16">
         {jobData.map(
           ({
             id,
