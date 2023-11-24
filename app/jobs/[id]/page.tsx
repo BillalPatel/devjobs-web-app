@@ -9,7 +9,7 @@ import dividerIcon from "../../assets/desktop/icon-oval.svg";
 import { data } from "../../data/jobData";
 import TabBar from "@/app/components/TabBar/TabBar";
 
-export function Page({ params }: any) {
+function Page({ params }: any) {
   const [jobData, setJobData] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
