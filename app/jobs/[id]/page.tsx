@@ -10,9 +10,6 @@ import { data } from "../../data/jobData";
 import TabBar from "@/app/components/TabBar/TabBar";
 
 export function Page({ params }: any) {
-  // const { id } = params;
-
-  // const [jobData, setJobData] = useState<Job[]>([]);
   const [jobData, setJobData] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -21,7 +18,7 @@ export function Page({ params }: any) {
 
     setJobData(job);
     setLoading(false);
-  }, []);
+  });
 
   if (loading || jobData === null) {
     return <p className="text-center font-bold text-2xl">Loading...</p>; // You can replace this with a loading spinner or any other loading indicator
@@ -56,7 +53,7 @@ export function Page({ params }: any) {
             width={1000}
           />
         </div>
-        <div className="flex flex-col md:flex-row lg:flex-row md:items-center lg:items-center self-center justify-between px-10 w-full text-center md:text-left lg:text-left relative md:static lg:static -top-2">
+        <div className="flex flex-col md:flex-row lg:flex-row md:items-center lg:items-center self-center justify-between px-10 md:px-12 lg:px-12 w-full text-center md:text-left lg:text-left relative md:static lg:static -top-2">
           <div>
             <h1 className="font-bold text-veryDarkBlue text-[1.25rem] lg:text-[1.75rem]">
               {company}
@@ -70,7 +67,7 @@ export function Page({ params }: any) {
         </div>
       </div>
 
-      <div className="description-container | bg-white rounded-md lg:p-14 px-6 py-7 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-4">
+      <div className="description-container | bg-white rounded-md px-8 md:px-12 lg:px-12 py-10 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-4">
         <section className="summary | space-y-14 md:space-y-0 lg:space-y-0 flex flex-col md:flex-row lg:flex-row justify-between">
           <div className="space-y-2">
             <div className="flex space-x-3 text-darkGrey items-center">
@@ -93,9 +90,12 @@ export function Page({ params }: any) {
           <h3 className="text-veryDarkBlue">Requirements</h3>
           <p className="text-darkGrey">{requirements.content}</p>
           <ul className="space-y-2 mx-5 list-disc marker:text-violet">
-            {requirements.items.map((item: string) => {
+            {requirements.items.map((item: string, key: number) => {
               return (
-                <li className="text-darkGrey list-outside leading-relaxed pl-6">
+                <li
+                  key={key}
+                  className="text-darkGrey list-outside leading-relaxed pl-6"
+                >
                   {item}
                 </li>
               );
@@ -107,9 +107,12 @@ export function Page({ params }: any) {
           <h3 className="text-veryDarkBlue">What You Will Do</h3>
           <p className="text-darkGrey">{role.content}</p>
           <ol className="space-y-2 mx-5 list-decimal marker:text-violet marker:font-bold">
-            {role.items.map((item: string) => {
+            {role.items.map((item: string, key: number) => {
               return (
-                <li className=" text-darkGrey list-outside leading-relaxed pl-6">
+                <li
+                  key={key}
+                  className=" text-darkGrey list-outside leading-relaxed pl-6"
+                >
                   {item}
                 </li>
               );
