@@ -24,8 +24,12 @@
   }
 
   p {
-    @apply text-base;
+    @apply text-base leading-relaxed;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {

@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-import dividerIcon from "../../../public/assets/desktop/icon-oval.svg";
+import dividerIcon from "../../assets/desktop/icon-oval.svg";
+import Link from "next/link";
 
 interface JobPostProps {
+  id: any;
   logo: any;
   bg: string;
   date: string;
@@ -14,9 +16,7 @@ interface JobPostProps {
 }
 
 export function JobPost(props: JobPostProps) {
-  const { logo, bg, date, contract, title, company, country } = props;
-
-  console.log(bg);
+  const { id, logo, bg, date, contract, title, company, country } = props;
 
   return (
     <div className="px-8 pb-9 pt-[3.06rem] bg-white rounded-md lg:w-[21.827rem] lg:h-[14.25rem] relative">
@@ -25,11 +25,11 @@ export function JobPost(props: JobPostProps) {
         style={{ backgroundColor: bg }}
       >
         <Image
-          // src={require(logo)}
-          src={require("../../../public/assets/logos/scoot.svg")}
+          src={logo}
           alt={`${company} logo`}
           width="50"
           height="50"
+          className="h-auto w-auto"
         />
       </div>
       <div className="content-container | space-y-8">
@@ -39,9 +39,11 @@ export function JobPost(props: JobPostProps) {
             <Image src={dividerIcon} alt="Divider icon" />
             <p className="job-contract-type">{contract}</p>
           </div>
-          <h3 className="job-title | text-veryDarkBlue text-elipsis truncate overflow-hidden cursor-pointer hover:text-darkGrey">
-            {title}
-          </h3>
+          <Link href={`/jobs/${id}`}>
+            <h3 className="job-title | text-veryDarkBlue text-elipsis truncate overflow-hidden cursor-pointer hover:text-darkGrey">
+              {title}
+            </h3>
+          </Link>
           <p className="job-company | text-darkGrey">{company}</p>
         </div>
         <h4 className="job-country | text-violet">{country}</h4>
