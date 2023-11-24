@@ -3,8 +3,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-import "animate.css";
-
 import sunIcon from "../../assets/desktop/icon-sun.svg";
 import moonIcon from "../../assets/desktop/icon-moon.svg";
 
