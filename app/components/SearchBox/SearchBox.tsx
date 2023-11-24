@@ -9,10 +9,8 @@ import checkedIcon from "../../assets/desktop/icon-check.svg";
 
 export function SearchBox() {
   return (
-    // <div className="rounded-md bg-white lg:w-[69.375rem] w-full max-w-sm md:min-w-full md:max-w-full max-w-fit h-20 absolute -top-10 mb-10 pl-8 flex flex-row">
-    <div className="rounded-md bg-white flex flex-row px-10 relative -top-10 max-w-7xl w-max">
+    <div className="rounded-md bg-white flex flex-row px-10 relative -top-10 w-[20.5rem] lg:w-[69.5rem] md:w-[43rem]">
       <div className="flex flex-row lg:w-2/5 md:w-1/3 py-7">
-        {/* w-full */}
         <Image src={searchIcon} alt="Search icon" />
         <input
           type="text"

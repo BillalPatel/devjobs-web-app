@@ -39,7 +39,7 @@ function Page({ params }: any) {
   } = jobData;
 
   return (
-    <div className="relative">
+    <div className="relative mb-28 md:mb-0 lg:mb-0">
       <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-white flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-12 -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="company-logo | z-50 md:rounded-t-none lg:rounded-t-none lg:rounded-r-none md:rounded-r-none md:rounded-bl-md lg:rounded-bl-md rounded-2xl flex justify-center items-center md:h-[8.75rem] md:w-[8.75rem] lg:h-[8.75rem] lg:w-[8.75rem] h-[3.125rem] w-[3.125rem] relative md:static lg:static -top-6"
