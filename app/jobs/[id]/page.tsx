@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import Button from "@/app/components/Button/Button";
+import TabBar from "@/app/components/TabBar/TabBar";
 import dividerIcon from "../../assets/desktop/icon-oval.svg";
 
 import { data } from "../../data/jobData";
-import TabBar from "@/app/components/TabBar/TabBar";
 
 function Page({ params }: any) {
   const [jobData, setJobData] = useState<any>([]);
@@ -21,7 +23,7 @@ function Page({ params }: any) {
   });
 
   if (loading || jobData === null) {
-    return <p className="text-center font-bold text-2xl">Loading...</p>; // You can replace this with a loading spinner or any other loading indicator
+    return <p className="text-center font-bold text-2xl">Loading...</p>;
   }
 
   const {
@@ -38,9 +40,18 @@ function Page({ params }: any) {
     role,
   } = jobData;
 
+  function loadingSkeleton() {
+    return (
+      <div className="md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
+        <Skeleton height={20} count={3} />
+      </div>
+    );
+  }
+
   return (
     <div className="relative mb-28 md:mb-0 lg:mb-0">
-      <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-white flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-12 -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
+      {loadingSkeleton()}
+      <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-white flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="company-logo | z-50 md:rounded-t-none lg:rounded-t-none lg:rounded-r-none md:rounded-r-none md:rounded-bl-md lg:rounded-bl-md rounded-2xl flex justify-center items-center md:h-[8.75rem] md:w-[8.75rem] lg:h-[8.75rem] lg:w-[8.75rem] h-[3.125rem] w-[3.125rem] relative md:static lg:static -top-6"
           style={{ backgroundColor: `${logoBackground}` }}
@@ -67,7 +78,7 @@ function Page({ params }: any) {
         </div>
       </div>
 
-      <div className="description-container | bg-white rounded-md px-8 md:px-12 lg:px-12 py-10 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-4">
+      <div className="description-container | bg-white rounded-md px-8 md:px-12 lg:px-12 py-10 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-10">
         <section className="summary | space-y-14 md:space-y-0 lg:space-y-0 flex flex-col md:flex-row lg:flex-row justify-between">
           <div className="space-y-2">
             <div className="flex space-x-3 text-darkGrey items-center">
