@@ -17,12 +17,12 @@ export function DisplayToggle() {
     <div className="display-toggle-container | flex flex-row items-center z-50 space-x-3">
       <Image className="h-6 w-auto" src={sunIcon} alt="Light mode" />
       <div
-        className={`toggle rounded-full bg-white w-14 h-7 flex items-center cursor-pointer ${
+        className={`toggle rounded-full bg-textWhite w-14 h-7 flex items-center cursor-pointer ${
           !isDarkMode ? "justify-start" : "justify-end"
         }`}
         onClick={handleToggleClick}
       >
-        <div className=" bg-violet w-4 h-4 rounded-full mx-2"></div>
+        <div className="bg-primary w-4 h-4 rounded-full mx-2"></div>
       </div>
       <Image className="h-6 w-auto" src={moonIcon} alt="Dark mode" />
     </div>

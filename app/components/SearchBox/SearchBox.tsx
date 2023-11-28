@@ -9,7 +9,7 @@ import checkedIcon from "../../assets/desktop/icon-check.svg";
 
 export function SearchBox() {
   return (
-    <div className="rounded-md bg-white flex flex-row px-10 relative -top-10 w-[20.5rem] lg:w-[69.5rem] md:w-[43rem]">
+    <div className="rounded-md bg-background flex flex-row px-10 relative -top-10 w-[20.5rem] lg:w-[69.5rem] md:w-[43rem]">
       <div className="flex flex-row lg:w-2/5 md:w-1/3 py-7">
         <Image src={searchIcon} alt="Search icon" />
         <input
@@ -33,7 +33,7 @@ export function SearchBox() {
           <div
             id="checkbox"
             // className="w-6 h-6 rounded-sm bg-lightGrey "
-            className="w-6 h-6 rounded-sm bg-violet"
+            className="w-6 h-6 rounded-sm bg-primary"
           />
           <Image
             className="absolute flex justify-center self-center items-center mx-auto z-50 ml-1"

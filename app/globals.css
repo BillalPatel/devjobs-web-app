@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-[#F4F6F8];
-  }
-
   h1 {
     @apply text-[1.75rem];
   }
@@ -44,4 +40,26 @@ body {
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+.light {
+  --mainBackground: 244, 246, 248, 1;
+  --background: 255, 255, 255, 1;
+  --primary: 89, 100, 224, 1;
+  --secondary: 89, 100, 224, 1;
+  --textWhite: 255, 255, 255, 1;
+  --textContent: 25, 32, 45, 1;
+  --textHeader: 25, 32, 45, 1;
+  --secondaryTextContent: 110, 128, 152, 1;
+}
+
+.dark {
+  --mainBackground: 18, 23, 33, 1;
+  --background: 25, 32, 45, 1;
+  --primary: 89, 100, 224, 1;
+  --secondary: 89, 100, 224, 1;
+  --textWhite: 255, 255, 255, 1;
+  --textContent: 255, 255, 255, 1;
+  --textHeader: 255, 255, 255, 1;
+  --secondaryTextContent: 157, 174, 194, 1;
 }

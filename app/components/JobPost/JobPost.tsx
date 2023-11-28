@@ -19,7 +19,7 @@ export function JobPost(props: JobPostProps) {
   const { id, logo, bg, date, contract, title, company, country } = props;
 
   return (
-    <div className="px-8 pb-9 pt-[3.06rem] bg-white rounded-md lg:w-[21.827rem] lg:h-[14.25rem] relative">
+    <div className="px-8 pb-9 pt-[3.06rem] bg-background rounded-md lg:w-[21.827rem] lg:h-[14.25rem] relative">
       <div
         className={`company-logo | z-50 rounded-xl h-[3.125rem] w-[3.125rem] absolute -top-7 flex justify-center items-center`}
         style={{ backgroundColor: bg }}
@@ -33,20 +33,20 @@ export function JobPost(props: JobPostProps) {
         />
       </div>
       <div className="content-container | space-y-8">
-        <div className=" bg-white rounded-md space-y-2">
+        <div className=" bg-background rounded-md space-y-2">
           <div className="flex flex-row space-x-3 text-darkGrey">
             <p className="job-date">{date}</p>
             <Image src={dividerIcon} alt="Divider icon" />
             <p className="job-contract-type">{contract}</p>
           </div>
           <Link href={`/jobs/${id}`}>
-            <h3 className="job-title | text-veryDarkBlue text-elipsis truncate overflow-hidden cursor-pointer hover:text-darkGrey">
+            <h3 className="job-title | text-textContent text-elipsis truncate overflow-hidden cursor-pointer hover:text-darkGrey">
               {title}
             </h3>
           </Link>
           <p className="job-company | text-darkGrey">{company}</p>
         </div>
-        <h4 className="job-country | text-violet">{country}</h4>
+        <h4 className="job-country | text-primary">{country}</h4>
       </div>
     </div>
   );

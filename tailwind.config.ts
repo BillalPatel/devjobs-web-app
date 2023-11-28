@@ -8,16 +8,15 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      violet: "#5964E0",
-      lightViolet: "#939BF4",
-      veryDarkBlue: "#19202D",
-      midnight: "#121721",
-      white: "#FFFFFF",
-      lightGrey: "#F4F6F8",
-      grey: "#9DAEC2",
-      darkGrey: "#6E8098",
+      primary: "rgba(var(--primary))",
+      secondary: "rgba(var(--secondary))",
+      textWhite: "rgba(var(--textWhite))",
+      textContent: "rgba(var(--textContent))",
+      textHeader: "rgba(var(--textHeader))",
+      secondaryTextContent: "rgba(var(--secondaryTextContent))",
+      background: "rgba(var(--background))",
+      mainBackground: "rgba(var(--mainBackground))",
     },
-    
   },
   plugins: [],
 };

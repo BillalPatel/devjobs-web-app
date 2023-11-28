@@ -77,7 +77,7 @@ export default function Home() {
           ? Array.from(Array(6).keys()).map((index) => (
               <div
                 key={index}
-                className="bg-white px-10 pt-5 pb-14 relative rounded-md"
+                className="bg-background px-10 pt-5 pb-14 relative rounded-md"
               >
                 <Skeleton
                   className="absolute -top-12 rounded-xl"

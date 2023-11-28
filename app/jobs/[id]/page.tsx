@@ -51,7 +51,7 @@ function Page({ params }: any) {
   return (
     <div className="relative mb-28 md:mb-0 lg:mb-0">
       {loadingSkeleton()}
-      <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-white flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
+      <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-background flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="company-logo | z-50 md:rounded-t-none lg:rounded-t-none lg:rounded-r-none md:rounded-r-none md:rounded-bl-md lg:rounded-bl-md rounded-2xl flex justify-center items-center md:h-[8.75rem] md:w-[8.75rem] lg:h-[8.75rem] lg:w-[8.75rem] h-[3.125rem] w-[3.125rem] relative md:static lg:static -top-6"
           style={{ backgroundColor: `${logoBackground}` }}
@@ -66,10 +66,10 @@ function Page({ params }: any) {
         </div>
         <div className="flex flex-col md:flex-row lg:flex-row md:items-center lg:items-center self-center justify-between px-10 md:px-12 lg:px-12 w-full text-center md:text-left lg:text-left relative md:static lg:static -top-2">
           <div>
-            <h1 className="font-bold text-veryDarkBlue text-[1.25rem] lg:text-[1.75rem]">
+            <h1 className="font-bold text-textHeader text-[1.25rem] lg:text-[1.75rem]">
               {company}
             </h1>
-            <p className="text-darkGrey truncate">{website}</p>
+            <p className="text-secondaryTextContent truncate">{website}</p>
           </div>
           <div className="mt-4 mb-7 lg:my-0">
             {/* <Button text="Company Site" variant="default" size="default" /> */}
@@ -78,18 +78,18 @@ function Page({ params }: any) {
         </div>
       </div>
 
-      <div className="description-container | bg-white rounded-md px-8 md:px-12 lg:px-12 py-10 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-10">
+      <div className="description-container | bg-background rounded-md px-8 md:px-12 lg:px-12 py-10 space-y-8 max-w-xl mx-auto ml-5 mr-5 md:max-w-2xl lg:max-w-4xl md:mx-auto lg:mx-auto relative top-4 md:-top-4 lg:-top-10">
         <section className="summary | space-y-14 md:space-y-0 lg:space-y-0 flex flex-col md:flex-row lg:flex-row justify-between">
           <div className="space-y-2">
-            <div className="flex space-x-3 text-darkGrey items-center">
+            <div className="flex space-x-3 text-secondaryTextContent items-center">
               <p className="job-date">{postedAt}</p>
               <Image src={dividerIcon} alt="Divider icon" />
               <p className="job-contract-type">{contract}</p>
             </div>
-            <h1 className="font-bold text-lg lg:text-[1.75rem] text-veryDarkBlue">
+            <h1 className="font-bold text-lg lg:text-[1.75rem] text-textHeader">
               {position}
             </h1>
-            <p className="text-violet font-bold">{location}</p>
+            <p className="text-primary font-bold">{location}</p>
           </div>
           <div className="flex items-center">
             <Button text="Apply Now" variant="default" size="wide" />
@@ -97,15 +97,15 @@ function Page({ params }: any) {
         </section>
 
         <section className="requirements-section | space-y-8">
-          <p className="text-darkGrey">{description}</p>
-          <h3 className="text-veryDarkBlue">Requirements</h3>
-          <p className="text-darkGrey">{requirements.content}</p>
-          <ul className="space-y-2 mx-5 list-disc marker:text-violet">
+          <p className="text-secondaryTextContent">{description}</p>
+          <h3 className="text-textHeader">Requirements</h3>
+          <p className="text-secondaryTextContent">{requirements.content}</p>
+          <ul className="space-y-2 mx-5 list-disc marker:text-primary">
             {requirements.items.map((item: string, key: number) => {
               return (
                 <li
                   key={key}
-                  className="text-darkGrey list-outside leading-relaxed pl-6"
+                  className="text-secondaryTextContent list-outside leading-relaxed pl-6"
                 >
                   {item}
                 </li>
@@ -115,14 +115,14 @@ function Page({ params }: any) {
         </section>
 
         <section className="role-section | space-y-8">
-          <h3 className="text-veryDarkBlue">What You Will Do</h3>
-          <p className="text-darkGrey">{role.content}</p>
-          <ol className="space-y-2 mx-5 list-decimal marker:text-violet marker:font-bold">
+          <h3 className="text-textHeader">What You Will Do</h3>
+          <p className="text-secondaryTextContent">{role.content}</p>
+          <ol className="space-y-2 mx-5 list-decimal marker:text-primary marker:font-bold">
             {role.items.map((item: string, key: number) => {
               return (
                 <li
                   key={key}
-                  className=" text-darkGrey list-outside leading-relaxed pl-6"
+                  className=" text-secondaryTextContent list-outside leading-relaxed pl-6"
                 >
                   {item}
                 </li>
