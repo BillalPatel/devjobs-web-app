@@ -15,8 +15,8 @@ const button = cva(
   {
     variants: {
       variant: {
-        default: ["bg-primary", "text-textWhite", "hover:bg-lightViolet"],
-        light: ["bg-primary", "text-primary", "bg-opacity-10"],
+        default: ["bg-primary", "text-textWhite", "hover:bg-hover"],
+        // light: ["bg-primary", "text-primary", "bg-opacity-10"],
       },
       size: {
         default: ["px-10", "max-w-[11rem]"],

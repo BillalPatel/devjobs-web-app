@@ -20,7 +20,7 @@ function Page({ params }: any) {
 
     setJobData(job);
     setLoading(false);
-  });
+  }, [params.id]);
 
   if (loading || jobData === null) {
     return <p className="text-center font-bold text-2xl">Loading...</p>;
@@ -42,15 +42,19 @@ function Page({ params }: any) {
 
   function loadingSkeleton() {
     return (
-      <div className="md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
-        <Skeleton height={20} count={3} />
+      <div className="md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 md:flex-row lg:flex-row items-center relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl bg-background py-8 px-12">
+        <Skeleton className="my-2" height={20} count={1} />
+        <Skeleton className="my-2" height={10} count={1} />
       </div>
     );
   }
 
   return (
     <div className="relative mb-28 md:mb-0 lg:mb-0">
-      {loadingSkeleton()}
+      {isLoading ? loadingSkeleton() : return (
+
+      
+      
       <div className="summary | md:rounded-b-md lg:rounded-b-md rounded-md max-w-xl ml-5 mr-5 bg-background flex flex-col self-center justify-self-center place-self-center md:flex-row lg:flex-row items-center md:items-start lg:items-start relative md:-top-12 lg:-top-[4.5rem] -top-4 md:mx-auto lg:mx-auto md:max-w-2xl lg:max-w-4xl">
         <div
           className="company-logo | z-50 md:rounded-t-none lg:rounded-t-none lg:rounded-r-none md:rounded-r-none md:rounded-bl-md lg:rounded-bl-md rounded-2xl flex justify-center items-center md:h-[8.75rem] md:w-[8.75rem] lg:h-[8.75rem] lg:w-[8.75rem] h-[3.125rem] w-[3.125rem] relative md:static lg:static -top-6"
@@ -72,8 +76,7 @@ function Page({ params }: any) {
             <p className="text-secondaryTextContent truncate">{website}</p>
           </div>
           <div className="mt-4 mb-7 lg:my-0">
-            {/* <Button text="Company Site" variant="default" size="default" /> */}
-            <Button text="Company " variant="light" size="default" />
+            <Button text="Company " variant="default" size="default" />
           </div>
         </div>
       </div>
@@ -131,6 +134,7 @@ function Page({ params }: any) {
           </ol>
         </section>
       </div>
+)}
 
       <TabBar position={position} company={company} />
     </div>

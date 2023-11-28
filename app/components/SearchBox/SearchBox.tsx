@@ -40,7 +40,7 @@ export function SearchBox() {
             src={checkedIcon}
             alt="Checked icon"
           />
-          <p className="font-bold flex flex-row gap-1">
+          <p className="font-bold flex flex-row gap-1 text-textContent">
             Full Time <span className="hidden lg:flex">Only</span>
           </p>
         </div>

@@ -26,7 +26,7 @@ export default function Home() {
   const [jobData, setJobData] = useState<Job[]>([]);
 
   useEffect(() => {
-    new Promise((r) => setTimeout(r, 1500))
+    new Promise((_) => setTimeout(_, 1500))
       .then(() => {
         setJobData(data);
       })

@@ -34,7 +34,7 @@ export function JobPost(props: JobPostProps) {
       </div>
       <div className="content-container | space-y-8">
         <div className=" bg-background rounded-md space-y-2">
-          <div className="flex flex-row space-x-3 text-darkGrey">
+          <div className="flex flex-row space-x-3 text-secondaryTextContent">
             <p className="job-date">{date}</p>
             <Image src={dividerIcon} alt="Divider icon" />
             <p className="job-contract-type">{contract}</p>
@@ -44,7 +44,7 @@ export function JobPost(props: JobPostProps) {
               {title}
             </h3>
           </Link>
-          <p className="job-company | text-darkGrey">{company}</p>
+          <p className="job-company | text-secondaryTextContent">{company}</p>
         </div>
         <h4 className="job-country | text-primary">{country}</h4>
       </div>

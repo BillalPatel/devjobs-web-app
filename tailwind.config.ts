@@ -16,6 +16,7 @@ const config: Config = {
       secondaryTextContent: "rgba(var(--secondaryTextContent))",
       background: "rgba(var(--background))",
       mainBackground: "rgba(var(--mainBackground))",
+      hover: "rgba(var(--hover))",
     },
   },
   plugins: [],

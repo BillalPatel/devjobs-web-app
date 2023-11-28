@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, createContext, useContext } from "react";
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 
@@ -8,23 +11,28 @@ import Header from "./components/Header/Header";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Dev Jobs App",
-  description: "A Frontend Mentor challenge",
-};
+// @ts-ignore
+export const ThemeContext = createContext();
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [theme, setTheme] = useState("light");
+
+  function toggleTheme() {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  }
+
   return (
     <html lang="en">
-      {/* <body className={kumbhSans.className}> */}
-      <body className="light bg-mainBackground">
-        <Header />
-        {children}
-      </body>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <body className={`${kumbhSans.className} bg-mainBackground ${theme}`}>
+          <Header />
+          {children}
+        </body>
+      </ThemeContext.Provider>
     </html>
   );
 }
