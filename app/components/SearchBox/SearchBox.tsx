@@ -19,7 +19,7 @@ export function SearchBox() {
         ></input>
       </div>
 
-      <div className="flex-row hidden md:flex lg:flex border-x-[0.0625rem] border-opacity-20 border-darkGrey py-7 pl-5 w-1/4 md:w-1/3">
+      <div className="flex-row hidden md:flex lg:flex border-x-[0.0625rem] border-opacity-20 border-secondaryTextContent py-7 pl-5 w-1/4 md:w-1/3">
         <Image src={locationIcon} alt="Filter location icon" />
         <input
           type="text"
