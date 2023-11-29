@@ -27,8 +27,8 @@ export function Header() {
         src={headerDesktopImg}
         alt="Desktop header"
       />
-      {/* <div className="absolute lg:px-[10.31rem] px-7 top-[2.75rem] flex flex-row justify-between w-screen min-w-max"> */}
-      <div className="absolute px-7 top-[2.75rem] min-w-full">
+      {/* <div className="absolute px-7 top-[2.75rem] min-w-full"> */}
+      <div className="absolute px-32 top-[2.75rem] min-w-full">
         <div className="flex flex-row justify-between">
           <Link href={"/"}>
             <Image
