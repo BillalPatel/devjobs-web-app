@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import type { Metadata } from "next";
+import React, { useState, createContext } from "react";
 import { Kumbh_Sans } from "next/font/google";
 
 import "./globals.css";

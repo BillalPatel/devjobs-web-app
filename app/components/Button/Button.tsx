@@ -5,8 +5,8 @@ const button = cva(
   [
     "capitalize",
     "rounded-md",
+    "px-8",
     "h-12",
-    "min-w-[10.5rem]",
     "lg:px-10",
     "text-center",
     "font-bold",
@@ -16,7 +16,6 @@ const button = cva(
     variants: {
       variant: {
         default: ["bg-primary", "text-textWhite", "hover:bg-hover"],
-        // light: ["bg-primary", "text-primary", "bg-opacity-10"],
       },
       size: {
         default: ["px-10", "max-w-[11rem]"],
@@ -31,13 +30,17 @@ interface ButtonProps
     VariantProps<typeof button> {
   text: string;
   textContent?: string;
-  onClick?: any;
+  onClick?: () => void;
 }
 
 export function Button(props: ButtonProps) {
-  const { variant, size, text } = props;
+  const { variant, size, text, onClick } = props;
 
-  return <button className={button({ variant, size })}>{text}</button>;
+  return (
+    <button className={button({ variant, size })} onClick={onClick}>
+      {text}
+    </button>
+  );
 }
 
 export default Button;
