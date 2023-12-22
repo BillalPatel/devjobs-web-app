@@ -9,6 +9,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import Button from "./components/Button/Button";
 
 import { data } from "./data/jobData";
+import { capitaliseFirstLetteOfEachWord } from "./helpers";
 
 interface Job {
   id: number;
@@ -26,6 +27,7 @@ export default function Home() {
   const [jobData, setJobData] = useState<Job[]>([]);
   const [jobDataCounter, setJobDataCounter] = useState<number>(9);
   const [noResults, setNoResults] = useState<boolean>(false);
+  const [isFullTimeChecked, setIsFullTimeChecked] = useState<boolean>(false);
 
   const renderJobPosts = useCallback(() => {
     return jobData.map(
@@ -68,6 +70,11 @@ export default function Home() {
   }, [jobDataCounter]);
 
   function handleSearch(formData: any) {
+    if (formData === null || formData === undefined) {
+      setJobData(data.slice(0, 9));
+      return;
+    }
+
     setJobData([]);
     const { company, location } = formData;
 
@@ -76,9 +83,19 @@ export default function Home() {
     }
 
     const filteredData = data.filter((job) => {
-      const companyMatches = job.company.includes(company);
-      const locationMatches = job.location.includes(location.toLowerCase());
-      return companyMatches && locationMatches;
+      const fullTimeMatches = isFullTimeChecked
+        ? job.contract === "Full Time"
+        : true;
+
+      const companyMatches = job.company.includes(
+        capitaliseFirstLetteOfEachWord(company)
+      );
+
+      const locationMatches = job.location.includes(
+        capitaliseFirstLetteOfEachWord(location)
+      );
+
+      return fullTimeMatches && companyMatches && locationMatches;
     });
 
     filteredData.length === 0 ? setNoResults(true) : setJobData(filteredData);
@@ -86,7 +103,11 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between relative lg:px-0 min-w-max">
-      <SearchBox onSearch={handleSearch} />
+      <SearchBox
+        onSearch={handleSearch}
+        isFullTime={setIsFullTimeChecked}
+        isChecked={isFullTimeChecked}
+      />
 
       {noResults ? (
         <h1 className="font-bold text-lg lg:text-[1.75rem] text-textHeader my-8">
