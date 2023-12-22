@@ -71,7 +71,7 @@ export default function Home() {
 
   function handleSearch(formData: any) {
     if (formData === null || formData === undefined) {
-      setJobData(data.slice(0, 9));
+      setJobData(data.slice(0, jobDataCounter));
       return;
     }
 
